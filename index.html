@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 60px;
+            background-color: #f0f0f0;
+            color: #000;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .nome {
+            text-align: center;
+            color: rgb(0, 0, 80);
+            background-color: rgb(177, 181, 240);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .nome h1 {
+            margin-bottom: 0;
+        }
+
+        .menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .menu a img,
+        .menu img.mode-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .menu a img:hover,
+        .menu img.mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: rgb(0, 0, 80);
+            background-color: #ccc;
+            padding: 15px;
+            border-bottom: 2px solid;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h2.open {
+            background-color: #bbb;
+        }
+
+        body.dark-mode h2.open {
+            background-color: #555;
+        }
+
+        .section {
+            padding: 0 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 0 0 10px 10px;
+            color: #000;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .section.visible {
+            display: block;
+            padding: 20px;
+        }
+
+        .section.dark-mode {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .projeto {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            color: #000;
+        }
+
+        .projeto a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .projeto a:hover {
+            text-decoration: underline;
+        }
+
+        .projeto p {
+            margin: 0;
+        }
+        #form-contato {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #form-contato input,
+        #form-contato textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid rgb(177, 181, 240);
+            border-radius: 5px;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+        }
+
+        #form-contato button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(177, 181, 240);
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #form-contato button:hover {
+            background-color: #9aafc3;
+        }
+        h1{
+            position: flex;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nome">
+        <h1>Arthur Szajda Simões</h1>
+        <p>Brasileiro, 19 anos.</p>
+    </div>
+
+    <ul class="menu">
+        <li><a href="https://www.linkedin.com/in/arthur-szajda-sim%C3%B5es/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"></a></li>
+        <li><a href="https://github.com/ArthurSzajdaSimoes"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github"></a></li>
+        <li><img src="img2.jpg" alt="Modo Claro" id="mode-toggle" class="mode-toggle" onclick="toggleDarkMode()"></li>
+    </ul>
+
+    <h2 onclick="toggleSection(this)">Biografia</h2>
+    <div class="section">
+        <h3>Descrição</h3>
+        <p>Meu nome é Arthur, tenho 19 anos. Estou começando no ramo de Engenharia de Software e programação. Tenho um pouco de habilidade com C, HTML, CSS e Javascript; em todos sou iniciante. Tenho capacidade para produzir uma página básica e fazer algumas funcionalidades.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Objetivo</h2>
+    <div class="section">
+        <p>Full-Stack, Webdesigner</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Projetos e Github Info</h2>
+    <div class="section" id="github-info">
+        <div class="projeto">
+            <h3><a href="https://github.com/ArthurSzajdaSimoes/Repositorio">Projeto 1: Criação de uma página de tarefas</a></h3>
+            <ul>
+                <li>Criação da tarefa e alocação dela em Local Storage</li>
+                <li>Opção de excluir ou editar a tarefa</li>
+                <li>Opção de mostrar tarefas excluídas</li>
+            </ul>
+        </div>
+        <div class="projeto">
+            <h3><a href="https://github.com/PhCalegari/Trabalho_nota_aluno">Projeto 2: Criação de uma página para calcular as notas e registrar os alunos</a></h3>
+            <ul>
+                <li>Alocação dos alunos</li>
+                <li>Cálculo das notas</li>
+                <li>Salvar notas e alunos em Local Storage</li>
+                <li>Exibir status do aluno (Aprovado, etc.)</li>
+            </ul>
+        </div>
+        <p>Carregando informações do Github...</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Formação</h2>
+    <div class="section">
+        <h3>Graduação em Engenharia de Software</h3>
+        <p>UniCesumar</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Cursos / Especializações</h2>
+    <div class="section">
+    </div>
+
+    <h2 onclick="toggleSection(this)">Idiomas</h2>
+    <div class="section">
+        <p>Inglês: Básico</p>
+    </div>
+    <h2 onclick="toggleSection(this)">Contato</h2>
+    <div class="section">
+        <h1>Entre em contato</h1>
+        <form id="form-contato" action="https://formspree.io/f/xblrrvdd" method="POST">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+            var sections = document.querySelectorAll(".section.visible");
+            sections.forEach(section => {
+                section.classList.toggle("dark-mode", body.classList.contains("dark-mode"));
+            });
+            var modeToggle = document.getElementById("mode-toggle");
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+                modeToggle.src = "img1.jpg";
+                modeToggle.alt = "Modo Noturno";
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+                modeToggle.src = "img2.jpg";
+                modeToggle.alt = "Modo Claro";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var darkModeState = localStorage.getItem("darkMode");
+            var modeToggle = document.getElementById("mode-toggle");
+            if (darkModeState === "enabled") {
+                document.body.classList.add("dark-mode");
+                modeToggle.src = "img1.jpg";
+                modeToggle.alt = "Modo Noturno";
+            }
+        });
+
+        function toggleSection(element) {
+            var section = element.nextElementSibling;
+            section.classList.toggle("visible");
+            element.classList.toggle("open");
+            section.classList.toggle("dark-mode", document.body.classList.contains("dark-mode"));
+            if (element.textContent.includes('Projetos e Github Info')) {
+                fetchGithubInfo();
+            }
+        }
+
+        function fetchGithubInfo() {
+            fetch('https://api.github.com/users/ArthurSzajdaSimoes')
+                .then(response => response.json())
+                .then(data => {
+                    const githubInfoDiv = document.getElementById('github-info');
+                    githubInfoDiv.innerHTML = `
+                        <div class="projeto">
+                            <h3>Informações do Github:</h3>
+                            <p>Nome: ${data.name || 'ArthurSzajdaSimoes'}</p>
+                            <p>Bio: ${data.bio || 'N/A'}</p>
+                            <p>Localização: ${data.location || 'N/A'}</p>
+                            <p>Repositórios Públicos: ${data.public_repos}</p>
+                            <p>Seguidores: ${data.followers}</p>
+                            <p>Seguindo: ${data.following}</p>
+                        </div>
+                    `;
+
+                    return fetch(data.repos_url);
+                })
+                .then(response => response.json())
+                .then(repos => {
+                    const githubInfoDiv = document.getElementById('github-info');
+                    const reposList = repos.map(repo => `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a> - ${repo.stargazers_count} estrelas</li>`).join('');
+                    githubInfoDiv.innerHTML += `
+                        <div class="projeto">
+                            <h3>Repositórios:</h3>
+                            <ul>${reposList}</ul>
+                        </div>
+                    `;
+                })
+                .catch(error => {
+                    const githubInfoDiv = document.getElementById('github-info');
+                    githubInfoDiv.innerHTML = `<p>Erro ao carregar informações do Github</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
